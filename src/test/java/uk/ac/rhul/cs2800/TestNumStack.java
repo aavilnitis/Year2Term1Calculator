@@ -1,14 +1,21 @@
 package uk.ac.rhul.cs2800;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class TestNumStack {
+	private NumStack numStack;
 
-	@Test
-	void testNumStack() {
-		NumStack numStack = new NumStack();
-		assertNotEquals(numStack.numStack, null, "The newly created NumStack should be initialised and not null.");
+	@BeforeEach
+	void setup() {
+		numStack = new NumStack();
 	}
+	
+	@Test
+	void testIsEmpty() {
+		assertEquals(numStack.numStack.size, 0, "Size of newly created numStack should be zero.");
+	}
+	
 
 }
