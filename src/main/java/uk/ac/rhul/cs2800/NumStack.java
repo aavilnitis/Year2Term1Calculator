@@ -6,4 +6,9 @@ public class NumStack {
 	public NumStack() {
 		this.numStack = new RhulStack();
 	}
+
+	public boolean isEmpty() {
+		return numStack.size == 0;
+	}
+
 }

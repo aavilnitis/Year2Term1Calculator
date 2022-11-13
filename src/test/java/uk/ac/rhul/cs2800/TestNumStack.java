@@ -14,8 +14,7 @@ class TestNumStack {
 	
 	@Test
 	void testIsEmpty() {
-		assertEquals(numStack.numStack.size, 0, "Size of newly created numStack should be zero.");
+		assertEquals(numStack.isEmpty(), true, "isEmpty() of newly created numStack should return true.");
 	}
-	
 
 }
