@@ -10,5 +10,14 @@ public class NumStack {
 	public boolean isEmpty() {
 		return numStack.size == 0;
 	}
+	
+	public int size() {
+		return numStack.size;
+	}
+
+	public void push(float f) {
+		Entry entry = new Entry(f);
+		numStack.push(entry);
+	}
 
 }
