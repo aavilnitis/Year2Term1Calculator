@@ -1,5 +1,6 @@
 package uk.ac.rhul.cs2800;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -26,7 +27,12 @@ class TestNumStack {
 	void testPush() {
 		numStack.push(5f);
 		assertEquals(numStack.size(), 1, "The size of numStack after pushing once should be one.");
-
 	}
+	
+	void testPop() throws BadTypeException {
+		numStack.push(5f);
+		assertEquals(numStack.pop(), 5f, "The value after pushing once and poping once should be the same.");
+	}
+
 
 }
