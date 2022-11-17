@@ -17,5 +17,10 @@ class TestOpStack {
 	void testIsEmpty() {
 		assertEquals(opStack.isEmpty(), true, "isEmpty() of newly created opStack should return true.");
 	}
+	
+	@Test
+	void testSize() {
+		assertEquals(opStack.size(), 0, "The size of newly created opStack should be zero.");
+	}
 
 }

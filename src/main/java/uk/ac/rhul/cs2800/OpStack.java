@@ -10,4 +10,11 @@ public class OpStack {
 	public boolean isEmpty() {
 		return this.opStack.size == 0;
 	}
+
+	public int size() {
+		return this.opStack.size;
+	}
+	
+	
 }
+
