@@ -37,5 +37,10 @@ class TestOpStack {
 		opStack.push(Symbol.MINUS);
 		assertEquals(opStack.pop(), Symbol.MINUS, "The value after pushing once and poping once should be the same.");
 	}
+	
+	@Test
+	void testEmptyStackException() {
+		EmptyStackException e = assertThrows(EmptyStackException.class, () -> opStack.pop());
+	}
 
 }
