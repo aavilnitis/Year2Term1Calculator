@@ -22,5 +22,11 @@ class TestOpStack {
 	void testSize() {
 		assertEquals(opStack.size(), 0, "The size of newly created opStack should be zero.");
 	}
+	
+	@Test
+	void testPush() {
+		opStack.push(Symbol.MINUS);
+		assertEquals(opStack.size(), 1, "The size of opStack after pushing only once should be one.");
+	}
 
 }
