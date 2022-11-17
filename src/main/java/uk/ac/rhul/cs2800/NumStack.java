@@ -22,7 +22,7 @@ public class NumStack {
 		numStack.push(entry);
 	}
 
-	public float pop() throws BadTypeException{
+	public float pop() throws BadTypeException, EmptyStackException{
 		if(numStack.size > 0) {
 			return numStack.pop().getValue();
 		}else {
