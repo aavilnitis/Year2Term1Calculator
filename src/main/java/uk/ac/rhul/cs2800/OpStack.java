@@ -20,6 +20,12 @@ public class OpStack {
 		opStack.push(entry);
 	}
 	
+	public Symbol pop() throws BadTypeException{
+		Entry entry = opStack.pop();
+		Symbol s = entry.getSymbol();
+		return s;
+	}
+	
 	
 }
 

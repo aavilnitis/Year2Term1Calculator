@@ -1,6 +1,9 @@
 package uk.ac.rhul.cs2800;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import java.util.EmptyStackException;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -27,6 +30,12 @@ class TestOpStack {
 	void testPush() {
 		opStack.push(Symbol.MINUS);
 		assertEquals(opStack.size(), 1, "The size of opStack after pushing only once should be one.");
+	}
+	
+	@Test
+	void testPop() throws BadTypeException {
+		opStack.push(Symbol.MINUS);
+		assertEquals(opStack.pop(), Symbol.MINUS, "The value after pushing once and poping once should be the same.");
 	}
 
 }
