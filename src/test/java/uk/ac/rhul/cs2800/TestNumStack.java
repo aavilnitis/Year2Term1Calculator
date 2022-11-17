@@ -42,6 +42,5 @@ class TestNumStack {
 	void testEmptyStackException() {
 		EmptyStackException e = assertThrows(EmptyStackException.class, () -> numStack.pop());
 	}
-	
 
 }

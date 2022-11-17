@@ -1,16 +1,21 @@
 package uk.ac.rhul.cs2800;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class TestOpStack {
+	private OpStack opStack;
 
+	@BeforeEach
+	void setup() {
+		opStack = new OpStack();
+	}
+	
 	@Test
-	void test() {
-		OpStack opStack = new OpStack();
-		assertNotEquals(opStack.opStack, null, "Newly created opStack should have an initialised RhulStack variable.");
+	void testIsEmpty() {
+		assertEquals(opStack.isEmpty(), true, "isEmpty() of newly created opStack should return true.");
 	}
 
 }
