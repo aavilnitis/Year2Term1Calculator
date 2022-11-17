@@ -36,7 +36,7 @@ public class RhulStack {
    * 
    * @return the top Entry object stored in the stack and remove it from the stack
    */
-  public Entry pop() {
+  public Entry pop() throws EmptyStackException{
     if (size == 0) {
       throw new EmptyStackException();
     }
@@ -51,7 +51,7 @@ public class RhulStack {
    * 
    * @return the top Entry object stored in the stack without removing it
    */
-  public Entry top() {
+  public Entry top() throws EmptyStackException{
     if (size == 0) {
       throw new EmptyStackException();
     }

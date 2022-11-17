@@ -1,7 +1,5 @@
 package uk.ac.rhul.cs2800;
 
-import java.util.EmptyStackException;
-
 public class NumStack {
 	protected RhulStack numStack;
 
@@ -22,12 +20,10 @@ public class NumStack {
 		numStack.push(entry);
 	}
 
-	public float pop() throws BadTypeException, EmptyStackException{
-		if(numStack.size > 0) {
-			return numStack.pop().getValue();
-		}else {
-			throw new EmptyStackException();
-		}
+	public float pop() throws BadTypeException{
+		Entry entry = numStack.pop();
+		float f = entry.getValue();
+		return f;
 	}
 
 }
