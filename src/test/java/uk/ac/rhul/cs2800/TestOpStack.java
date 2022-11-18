@@ -41,6 +41,5 @@ class TestOpStack {
 	@Test
 	void testEmptyStackException() {
 		EmptyStackException e = assertThrows(EmptyStackException.class, () -> opStack.pop());
-	}
-
+	}	
 }
