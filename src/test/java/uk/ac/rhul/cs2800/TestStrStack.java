@@ -1,15 +1,13 @@
 package uk.ac.rhul.cs2800;
 
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
-
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
 
 class TestStrStack {
+	StrStack strStack;
 
-	@Test
+	@BeforeEach
 	void setup() {
-		StrStack strStack = new StrStack();
-		assertNotEquals(strStack.strStack, null, "Newly created strStack should contain RhulStack that has been initialised.");
+		strStack = new StrStack();
 	}
 
 }
