@@ -10,4 +10,8 @@ public class StrStack {
 	public boolean isEmpty() {
 		return strStack.size == 0;
 	}
+
+	public int size() {
+		return strStack.size;
+	}
 }

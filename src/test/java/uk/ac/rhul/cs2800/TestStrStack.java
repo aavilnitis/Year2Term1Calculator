@@ -17,5 +17,10 @@ class TestStrStack {
 	void testIsEmpty() {
 		assertEquals(strStack.isEmpty(), true, "isEmpty() of newly created strStack should return true.");
 	}
+	
+	@Test
+	void testSize() {
+		assertEquals(strStack.size(), 0, "Size of newly created strStack should be zero.");
+	}
 
 }
