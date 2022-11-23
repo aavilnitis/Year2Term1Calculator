@@ -14,4 +14,10 @@ public class StrStack {
 	public int size() {
 		return strStack.size;
 	}
+
+	public void push(String string) {
+		Entry entry = new Entry(string);
+		strStack.push(entry);
+	}
+
 }

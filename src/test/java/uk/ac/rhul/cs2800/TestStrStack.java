@@ -22,5 +22,11 @@ class TestStrStack {
 	void testSize() {
 		assertEquals(strStack.size(), 0, "Size of newly created strStack should be zero.");
 	}
+	
+	@Test
+	void testPush() {
+		strStack.push("String");
+		assertEquals(strStack.size(), 1, "The size of strStack after pushing once should be one.");
+	}
 
 }
