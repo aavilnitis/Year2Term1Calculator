@@ -1,6 +1,9 @@
 package uk.ac.rhul.cs2800;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import java.util.EmptyStackException;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -33,6 +36,11 @@ class TestStrStack {
 	void testPop() throws BadTypeException {
 		strStack.push("String");
 		assertEquals(strStack.pop(), "String", "The string after pushing once and poping once should be the same.");
+	}
+	
+	@Test
+	void testEmptyStackException() {
+		EmptyStackException e = assertThrows(EmptyStackException.class, () -> strStack.pop());
 	}
 
 }
