@@ -6,4 +6,8 @@ public class StrStack {
 	public StrStack() {
 		this.strStack = new RhulStack();
 	}
+
+	public boolean isEmpty() {
+		return strStack.size == 0;
+	}
 }
