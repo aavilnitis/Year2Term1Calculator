@@ -28,5 +28,11 @@ class TestStrStack {
 		strStack.push("String");
 		assertEquals(strStack.size(), 1, "The size of strStack after pushing once should be one.");
 	}
+	
+	@Test
+	void testPop() throws BadTypeException {
+		strStack.push("String");
+		assertEquals(strStack.pop(), "String", "The string after pushing once and poping once should be the same.");
+	}
 
 }

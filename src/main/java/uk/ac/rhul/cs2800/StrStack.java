@@ -20,4 +20,10 @@ public class StrStack {
 		strStack.push(entry);
 	}
 
+	public String pop() throws BadTypeException {
+		Entry entry = strStack.pop();
+		String string = entry.getString();
+		return string;
+	}
+
 }
