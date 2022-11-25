@@ -35,8 +35,18 @@ class TestRevPolishCalc {
 	
 	//Evaluate testing: Returns 0f = operator, 1f = numeric, 3f = invalid.
 	@Test
-	void testEvaluateOptions() {
+	void testEvaluateNumeric() {
 		assertEquals(revPolishCalc.evaluate("1"), 1f, "The evaluate method should return 1f if I pass in a numeric value.");
+	}
+	
+	@Test
+	void testEvaluateOperator() {
+		assertEquals(revPolishCalc.evaluate("+"), 0f, "The evaluate method should return 0f if I pass in an operator value.");
+	}
+	
+	@Test
+	void testEvaluateInvalid() {
+		assertEquals(revPolishCalc.evaluate("."), 2f, "The evaluate method should return 2f if I pass in an invalid value.");
 	}
 
 }

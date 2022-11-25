@@ -34,6 +34,8 @@ public class RevPolishCalc {
 			c = scanner.next();
 			if(isNumeric(c)) {
 				return 1f;
+			} else if(isOperator(c)) {
+				return 0f;
 			}
 		}
 		return 2f;
