@@ -16,7 +16,11 @@ class TestRevPolishCalc {
 	@Test
 	void testIsOperator() {
 		assertEquals(revPolishCalc.isOperator("+"), true, "The isOperator method should return true with input +");
-		
+	}
+	
+	@Test
+	void testIsNotOperator() {
+		assertEquals(revPolishCalc.isOperator("G"), false, "The isOperator method should return true with input G");
 	}
 
 }

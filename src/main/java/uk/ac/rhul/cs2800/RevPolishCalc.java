@@ -8,7 +8,10 @@ public class RevPolishCalc {
 	}
 
 	public boolean isOperator(String string) {
-		return true;
+		if(string.equals("+") || string.equals("-") || string.equals("*") || string.equals("/")) {
+			return true;
+		}
+		return false;
 	}
 
 }
