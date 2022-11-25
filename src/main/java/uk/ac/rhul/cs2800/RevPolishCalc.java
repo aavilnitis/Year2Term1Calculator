@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class RevPolishCalc {
 	private NumStack numStack;
 	private String c;
-	private float result;
+	private float result, x, y;
 
 	public RevPolishCalc() {
 		this.numStack = new NumStack();
@@ -38,27 +38,34 @@ public class RevPolishCalc {
 
 			} else if (isOperator(c)) {
 				switch(c) {
-					case "+":
-						result = 0f;
-						break;
-					case "-":
-						result =  1f;
-						break;
-					case "*":
-						result =  2f;
-						break;
-					case "/":
-						result =  3f;
-						break;
-					default:
-						break;
+				case "+":
+					x = numStack.pop();
+					y = numStack.pop();
+					numStack.push(x + y);
+					break;
+				case "-":
+					x = numStack.pop();
+					y = numStack.pop();
+					numStack.push(y - x);
+					break;
+				case "*":
+					x = numStack.pop();
+					y = numStack.pop();
+					numStack.push(x * y);
+					break;
+				case "/":
+					x = numStack.pop();
+					y = numStack.pop();
+					numStack.push(y / x);
+					break;
+				default:
+					break;
 				}
-				return result;
 			} else {
 				throw new Exception("Illegal Operator!");
 			}
 		}
-		return result;
+		return numStack.pop();
 	}
 
 }
