@@ -32,5 +32,11 @@ class TestRevPolishCalc {
 	void testIsNotNumeric() {
 		assertEquals(revPolishCalc.isNumeric("bbb"), false, "The isNumeric method should return false with input bbb");
 	}
+	
+	//Evaluate testing: Returns 0f = operator, 1f = numeric, 3f = invalid.
+	@Test
+	void testEvaluateOptions() {
+		assertEquals(revPolishCalc.evaluate("1"), 1f, "The evaluate method should return 1f if I pass in a numeric value.");
+	}
 
 }
