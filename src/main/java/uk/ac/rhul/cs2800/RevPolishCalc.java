@@ -14,4 +14,8 @@ public class RevPolishCalc {
 		return false;
 	}
 
+	public  boolean isNumeric(String str) {
+		return true;
+	}
+
 }

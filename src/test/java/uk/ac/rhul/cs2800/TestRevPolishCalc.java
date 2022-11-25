@@ -20,7 +20,12 @@ class TestRevPolishCalc {
 	
 	@Test
 	void testIsNotOperator() {
-		assertEquals(revPolishCalc.isOperator("G"), false, "The isOperator method should return true with input G");
+		assertEquals(revPolishCalc.isOperator("G"), false, "The isOperator method should return false with input G");
+	}
+	
+	@Test
+	void testIsNumeric() {
+		assertEquals(revPolishCalc.isNumeric("12"), true, "The isNumeric method should return true with input 12");
 	}
 
 }
