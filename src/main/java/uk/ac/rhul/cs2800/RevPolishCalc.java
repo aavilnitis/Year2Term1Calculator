@@ -7,4 +7,8 @@ public class RevPolishCalc {
 		this.numStack = new NumStack();
 	}
 
+	public boolean isOperator(String string) {
+		return true;
+	}
+
 }
