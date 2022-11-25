@@ -27,18 +27,38 @@ public class RevPolishCalc {
 		}
 	}
 
-	public float evaluate(String string) {
+	public float evaluate(String string) throws Exception {
 		Scanner scanner = new Scanner(string);
-		
-		if(scanner.hasNext()) {
+
+		while (scanner.hasNext()) {
 			c = scanner.next();
-			if(isNumeric(c)) {
-				return 1f;
-			} else if(isOperator(c)) {
-				return 0f;
+
+			if (isNumeric(c)) {
+				numStack.push(Float.parseFloat(c));
+
+			} else if (isOperator(c)) {
+				switch(c) {
+					case "+":
+						result = 0f;
+						break;
+					case "-":
+						result =  1f;
+						break;
+					case "*":
+						result =  2f;
+						break;
+					case "/":
+						result =  3f;
+						break;
+					default:
+						break;
+				}
+				return result;
+			} else {
+				throw new Exception("Illegal Operator!");
 			}
 		}
-		return 2f;
+		return result;
 	}
 
 }
