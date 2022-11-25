@@ -28,14 +28,6 @@ class TestRevPolishCalc {
 	}
 	
 	@Test
-	void testOperators() throws Exception {
-		assertEquals(revPolishCalc.evaluate("+"), 0f, "The evaluate method should return 0f with input +");
-		assertEquals(revPolishCalc.evaluate("-"), 1f, "The evaluate method should return 1f with input -");
-		assertEquals(revPolishCalc.evaluate("*"), 2f, "The evaluate method should return 2f with input *");
-		assertEquals(revPolishCalc.evaluate("/"), 3f, "The evaluate method should return 3f with input /");
-	}
-	
-	@Test
 	void testIllegalOperator() throws Exception {
 		assertThrows(Exception.class, () -> revPolishCalc.evaluate("?"));
 	}
