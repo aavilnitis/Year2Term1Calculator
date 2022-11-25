@@ -49,4 +49,10 @@ class TestRevPolishCalc {
 		assertEquals(revPolishCalc.evaluate("10 6 9 3 + -11 * / * 17 + 5 +"), ((10f * (6f / ((9f + 3f) * -11f))) + 17f) + 5f,
 				"1 3 + in postfix notation means 1 + 3 which should return 4f");
 	}
+	
+	@Test
+	void testIllegalOperatorAmongCorrect() throws Exception {
+		assertThrows(Exception.class, () -> revPolishCalc.evaluate("13 1 5 + - ?"));
+	}
+	
 }
