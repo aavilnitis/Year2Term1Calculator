@@ -15,7 +15,12 @@ public class RevPolishCalc {
 	}
 
 	public  boolean isNumeric(String str) {
-		return true;
+	    try {
+	        Integer.parseInt(str);
+	        return true;
+	    } catch (NumberFormatException e) {
+	        return false;
+	    }
 	}
 
 }

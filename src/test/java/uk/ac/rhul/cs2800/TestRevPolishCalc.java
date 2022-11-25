@@ -27,5 +27,10 @@ class TestRevPolishCalc {
 	void testIsNumeric() {
 		assertEquals(revPolishCalc.isNumeric("12"), true, "The isNumeric method should return true with input 12");
 	}
+	
+	@Test
+	void testIsNotNumeric() {
+		assertEquals(revPolishCalc.isNumeric("bbb"), false, "The isNumeric method should return false with input bbb");
+	}
 
 }
