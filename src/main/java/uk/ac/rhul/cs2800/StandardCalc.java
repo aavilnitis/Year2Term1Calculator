@@ -20,6 +20,9 @@ public class StandardCalc {
 			if (isNumeric(next)) {
 				postfix += next + " ";
 			}
+			else if(isLeftBracket(next)) {
+				postfix += "left_bracket";
+			}
 		}
 		return postfix;
 	}

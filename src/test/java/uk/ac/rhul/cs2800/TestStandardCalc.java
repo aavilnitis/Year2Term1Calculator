@@ -55,14 +55,20 @@ class TestStandardCalc {
 	
 	@Test
 	void testEvaluate() {
-		assertEquals(standardCalc.evaluate("1 2 3"), "1 2 3 ", "Evaluate with input 1 2 3 should "
+		assertEquals(standardCalc.evaluate("1 2 3"), "1 2 3 ", "Evaluate with input '1 2 3' should "
 				+ "return a string with the same numbers in the same order.");
 	}
 	
 	@Test
 	void testEvaluateWithNotNumbers() {
 		assertEquals(standardCalc.evaluate("1 . 2 + f h k ? 3"), "1 2 3 ", "Evaluate with input "
-				+ "1 . 2 + f h k ? 3 should still return the same numbers as last time.");
+				+ "'1 . 2 + f h k ? 3' should still return the same numbers as last test case.");
+	}
+	
+	@Test
+	void testLeftBracket() {
+		assertEquals(standardCalc.evaluate("("), "left_bracket", "Evaluate with input '(' should"
+				+ " return a string containing 'left_bracket'");
 	}
 
 }
