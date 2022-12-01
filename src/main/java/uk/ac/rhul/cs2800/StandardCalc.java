@@ -3,7 +3,7 @@ package uk.ac.rhul.cs2800;
 import java.util.Scanner;
 
 public class StandardCalc {
-	private OpStack opStack;
+	protected OpStack opStack;
 	private RevPolishCalc rpCalc;
 	private Scanner scanner;
 	private String next, postfix = "";
@@ -22,7 +22,7 @@ public class StandardCalc {
 				postfix += next + " ";
 			}
 			else if(isLeftBracket(next)) {
-				postfix += "left_bracket ";
+				opStack.push(whichSymbol(next));
 			}
 			else if(isRightBracket(next)) {
 				postfix += "right_bracket ";

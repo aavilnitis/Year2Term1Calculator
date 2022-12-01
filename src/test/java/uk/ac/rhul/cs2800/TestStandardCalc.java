@@ -65,5 +65,12 @@ class TestStandardCalc {
 				+ "Symbol.DIVIDE with the input '/'");
 	}
 	
+	@Test
+	void testLeftBracketcorrect() {
+		standardCalc.evaluate("(");
+		assertEquals(standardCalc.opStack.size(), 1, "After reading a left bracket, "
+				+ "evaluate should push the left bracket to the opStack increasing the size by one");
+	}
+	
 	
 }
