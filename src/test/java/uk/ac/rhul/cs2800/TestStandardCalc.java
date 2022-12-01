@@ -72,5 +72,11 @@ class TestStandardCalc {
 				+ "evaluate should push the left bracket to the opStack increasing the size by one");
 	}
 	
+	@Test
+	void testOperatorCorrect() {
+		standardCalc.evaluate("+ -");
+		assertEquals(standardCalc.opStack.size(), 2, "After reading two operators, "
+				+ "evaluate should push the operators to the opStack increasing the size by two");
+	}
 	
 }

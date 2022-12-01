@@ -28,7 +28,7 @@ public class StandardCalc {
 				postfix += "right_bracket ";
 			}
 			else if (isOperator(next)) {
-				postfix += "operator ";
+				opStack.push(whichSymbol(next));
 			}
 		}
 		return postfix;
