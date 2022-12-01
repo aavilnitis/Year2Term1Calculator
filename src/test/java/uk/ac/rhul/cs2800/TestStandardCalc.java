@@ -74,14 +74,14 @@ class TestStandardCalc {
 	
 	@Test
 	void testOperatorCorrect() throws BadTypeException {
-		standardCalc.evaluate("+ -");
-		assertEquals(standardCalc.opStack.size(), 2, "After reading two operators, "
-				+ "evaluate should push the operators to the opStack increasing the size by two");
+		standardCalc.evaluate("+");
+		assertEquals(standardCalc.opStack.size(), 1, "After reading an operator, "
+				+ "evaluate should push the operator to the opStack increasing the size by one");
 	}
 	
 	@Test
 	void testRightBracketCorrect() throws BadTypeException {
-		assertEquals(standardCalc.evaluate("( + - )"), "- + ", "After reading left bracket, "
+		assertEquals(standardCalc.evaluate("( + - )"), "+ - ", "After reading left bracket, "
 				+ "then two operators and then right bracket, evaluate should push the left bracket"
 				+ "and two operators onto opStack, but when it reads a right bracket it should pop"
 				+ "everything off until it reaches a left bracket and add it to postfix string.");

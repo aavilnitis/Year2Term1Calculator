@@ -31,6 +31,10 @@ public class StandardCalc {
 				opStack.pop();
 			}
 			else if (isOperator(next)) {
+				while (!opStack.isEmpty() && opStack.top() != Symbol.LEFT_BRACKET
+						&& precedence(opStack.top().toString()) >= precedence(next)) {
+					postfix += opStack.pop().toString() + " ";
+				}
 				opStack.push(whichSymbol(next));
 			}
 		}
