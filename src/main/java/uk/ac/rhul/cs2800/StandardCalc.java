@@ -1,12 +1,22 @@
 package uk.ac.rhul.cs2800;
 
+import java.util.Scanner;
+
 public class StandardCalc {
 	private OpStack opStack;
 	private RevPolishCalc rpCalc;
+	private Scanner scanner;
+	private String next;
 	
 	public StandardCalc() {
 		this.opStack = new OpStack();
 		this.rpCalc = new RevPolishCalc();
+	}
+	
+	public String evaluate(String what) {
+		scanner = new Scanner(what);
+		next = scanner.next();
+		return next;
 	}
 
 	public boolean isNumeric(String str) {
@@ -45,4 +55,6 @@ public class StandardCalc {
 			throw new IllegalArgumentException("Operator unknown: " + op);
 		}
 	}
+
+	
 }

@@ -52,5 +52,12 @@ class TestStandardCalc {
 				"precedence() method of StandardCalc should throw an IllegalArgumentException "
 				+ "if the input is not an operator.");
 	}
+	
+	@Test
+	void testEvaluateScanner() {
+		assertEquals(standardCalc.evaluate("test"), "test", "As I am currently testing if the scanner works, "
+				+ "evaluate should return a String with the same input as given.");
+		
+	}
 
 }
