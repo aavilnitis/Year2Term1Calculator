@@ -18,7 +18,6 @@ public class StandardCalc {
 		while(scanner.hasNext()) {
 			next = scanner.next();
 			if (isNumeric(next)) {
-				System.out.println(next);
 				postfix += next + " ";
 			}
 		}

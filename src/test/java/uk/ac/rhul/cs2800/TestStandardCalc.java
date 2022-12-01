@@ -58,5 +58,11 @@ class TestStandardCalc {
 		assertEquals(standardCalc.evaluate("1 2 3"), "1 2 3 ", "Evaluate with input 1 2 3 should "
 				+ "return a string with the same numbers in the same order.");
 	}
+	
+	@Test
+	void testEvaluateWithNotNumbers() {
+		assertEquals(standardCalc.evaluate("1 . 2 + f h k ? 3"), "1 2 3 ", "Evaluate with input "
+				+ "1 . 2 + f h k ? 3 should still return the same numbers as last time.");
+	}
 
 }
