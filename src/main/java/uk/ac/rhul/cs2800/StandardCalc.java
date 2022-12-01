@@ -13,12 +13,11 @@ public class StandardCalc {
 		this.rpCalc = new RevPolishCalc();
 	}
 	
-	public String evaluate(String what) throws BadTypeException {
+	public float evaluate(String what) throws Exception {
 		scanner = new Scanner(what);
 		while(scanner.hasNext()) {
 			next = scanner.next();
 			if (isNumeric(next)) {
-				System.out.println(next);
 				postfix += next + " ";
 			}
 			else if(isLeftBracket(next)) {
@@ -46,7 +45,7 @@ public class StandardCalc {
 			}
 		}
 		
-		return postfix;
+		return rpCalc.evaluate(postfix);
 	}
 
 	protected boolean isNumeric(String str) {

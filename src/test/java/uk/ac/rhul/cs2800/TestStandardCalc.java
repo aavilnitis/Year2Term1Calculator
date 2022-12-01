@@ -66,7 +66,7 @@ class TestStandardCalc {
 	}
 	
 	@Test
-	void testRightBracketCorrect() throws BadTypeException {
+	void testRightBracketCorrect() throws Exception {
 		assertEquals(standardCalc.evaluate("( + - )"), "+ - ", "After reading left bracket, "
 				+ "then two operators and then right bracket, evaluate should push the left bracket"
 				+ "and two operators onto opStack, but when it reads a right bracket it should pop"
@@ -74,11 +74,19 @@ class TestStandardCalc {
 	}
 	
 	@Test
-	void testEverythingIsCovered() throws BadTypeException {
+	void testEverythingIsCovered() throws Exception {
 		assertEquals(standardCalc.evaluate("( 5 + 4 ) * 5"), "5 4 + 5 * ", "Edge case: if there is a closing, "
 				+ "closing bracket before the equation actually ends, nothing after the right bracket"
 				+ "is read as it stops reading it when a right bracket is met.");
 	}
+	
+	@Test
+	void testMath() throws Exception {
+		assertEquals(standardCalc.evaluate("( 5 + 4 ) * 5"), (5f + 4f) * 5f, "Tests if evaluate"
+				+ " returns a correct calculation.");
+	}
+	
+	
 	
 	
 }
