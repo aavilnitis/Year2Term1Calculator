@@ -33,5 +33,15 @@ class TestStandardCalc {
 		assertEquals(standardCalc.isOperator("?"), false, "isOperator() should return false with input ?.");
 	}
 	
+	@Test
+	void testIsLeftBracket() {
+		assertEquals(standardCalc.isLeftBracket("("), true, "isLeftbracket() should return true with input (.");
+	}
+	
+	@Test
+	void testIsRightBracket() {
+		assertEquals(standardCalc.isLeftBracket("("), true, "isLeftbracket() should return true with input (.");
+	}
+	
 
 }

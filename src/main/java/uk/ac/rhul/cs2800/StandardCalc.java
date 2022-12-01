@@ -24,4 +24,12 @@ public class StandardCalc {
 		}
 		return false;
 	}
+
+	public boolean isLeftBracket(String string) {
+		return true;
+	}
+
+	public boolean isRightBracket(String string) {
+		return true;
+	}
 }
