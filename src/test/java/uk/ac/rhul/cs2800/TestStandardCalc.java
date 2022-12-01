@@ -54,7 +54,16 @@ class TestStandardCalc {
 	}
 	
 	@Test
-	void testEvaluate() {
-		assertEquals(standardCalc.evaluate("1 ( ) +"), "operand left_bracket right_bracket operator ");
+	void testWhichSymbol() {
+		assertEquals(standardCalc.whichSymbol("+"), Symbol.PLUS, "whichSymbol() should return an enum "
+				+ "Symbol.PLUS with the input '+'");
+		assertEquals(standardCalc.whichSymbol("-"), Symbol.MINUS, "whichSymbol() should return an enum "
+				+ "Symbol.MINUS with the input '-'");
+		assertEquals(standardCalc.whichSymbol("*"), Symbol.TIMES, "whichSymbol() should return an enum "
+				+ "Symbol.TIMES with the input '*'");
+		assertEquals(standardCalc.whichSymbol("/"), Symbol.DIVIDE, "whichSymbol() should return an enum "
+				+ "Symbol.DIVIDE with the input '/'");
 	}
+	
+	
 }

@@ -19,7 +19,7 @@ public class StandardCalc {
 			next = scanner.next();
 			if (isNumeric(next)) {
 				System.out.println(next);
-				postfix += "operand ";
+				postfix += next + " ";
 			}
 			else if(isLeftBracket(next)) {
 				postfix += "left_bracket ";
@@ -69,6 +69,34 @@ public class StandardCalc {
 		default:
 			throw new IllegalArgumentException("Operator unknown: " + op);
 		}
+	}
+
+	public Symbol whichSymbol(String symbol) {
+		Symbol s;
+		switch (symbol) {
+		case "+":
+			s = Symbol.PLUS;
+			break;
+		case "-":
+			s = Symbol.MINUS;
+			break;
+		case "*":
+			s = Symbol.TIMES;
+			break;
+		case "/":
+			s = Symbol.DIVIDE;
+			break;
+		case "(":
+			s = Symbol.LEFT_BRACKET;
+			break;
+		case ")":
+			s = Symbol.RIGHT_BRACKET;
+			break;
+		default:
+			s = Symbol.INVALID;
+			break;
+		}
+		return s;
 	}
 
 	
