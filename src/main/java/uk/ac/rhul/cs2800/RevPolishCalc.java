@@ -20,7 +20,7 @@ public class RevPolishCalc {
 
 	public boolean isNumeric(String str) {
 		try {
-			Integer.parseInt(str);
+			Float.parseFloat(str);
 			return true;
 		} catch (NumberFormatException e) {
 			return false;
@@ -32,11 +32,7 @@ public class RevPolishCalc {
 
 		while (scanner.hasNext()) {
 			c = scanner.next();
-
-			if (isNumeric(c)) {
-				numStack.push(Float.parseFloat(c));
-
-			} else if (isOperator(c)) {
+			if (isOperator(c)) {
 				switch(c) {
 				case "+":
 					x = numStack.pop();
@@ -61,7 +57,10 @@ public class RevPolishCalc {
 				default:
 					break;
 				}
-			} else {
+			} else if(isNumeric(c)) {
+				numStack.push(Float.parseFloat(c));
+			}
+			else {
 				throw new Exception("Illegal Operator!");
 			}
 		}

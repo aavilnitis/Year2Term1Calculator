@@ -1,5 +1,7 @@
 package uk.ac.rhul.cs2800;
 
+import java.util.EmptyStackException;
+
 public class OpStack {
 	private RhulStack opStack;
 	
@@ -13,6 +15,11 @@ public class OpStack {
 
 	public int size() {
 		return this.opStack.size;
+	}
+	
+	public Symbol top() throws EmptyStackException, BadTypeException{
+		Entry entry = opStack.top();
+		return entry.getSymbol();
 	}
 
 	public void push(Symbol s) {
