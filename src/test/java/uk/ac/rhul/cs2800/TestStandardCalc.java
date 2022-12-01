@@ -1,16 +1,13 @@
 package uk.ac.rhul.cs2800;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
 
 class TestStandardCalc {
+	StandardCalc standardCalc;
 
-	@Test
+	@BeforeEach
 	void testStandardCalc() {
-		StandardCalc standardCalc = new StandardCalc();
-		assertNotEquals(standardCalc.opStack, null, "OpStack of newly created StandardCalc should be initialised.");
-		assertNotEquals(standardCalc.rpCalc, null, "RevPolishCalc of newly created StandardCalc should be initialised.");
+		standardCalc = new StandardCalc();
 	}
 
 }
