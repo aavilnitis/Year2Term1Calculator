@@ -16,31 +16,27 @@ class TestStandardCalc {
 	@Test
 	void testIsNumeric() {
 		assertEquals(standardCalc.isNumeric("5"), true, "isNumeric() should return true with input 5.");
-	}
-	
-	@Test
-	void testIsNotNumeric() {
 		assertEquals(standardCalc.isNumeric("?"), false, "isNumeric() should return false with input ?.");
+
 	}
-	
+
 	@Test
 	void testIsOperator() {
 		assertEquals(standardCalc.isOperator("*"), true, "isOperator() should return true with input *.");
-	}
-	
-	@Test
-	void testIsNotOperator() {
 		assertEquals(standardCalc.isOperator("?"), false, "isOperator() should return false with input ?.");
+
 	}
 	
 	@Test
-	void testIsLeftBracket() {
+	void testIsBracket() {
 		assertEquals(standardCalc.isLeftBracket("("), true, "isLeftbracket() should return true with input (.");
+		assertEquals(standardCalc.isLeftBracket("("), true, "isRightbracket() should return true with input ).");
 	}
 	
 	@Test
-	void testIsRightBracket() {
-		assertEquals(standardCalc.isLeftBracket("("), true, "isLeftbracket() should return true with input (.");
+	void testIsNotBracket() {
+		assertEquals(standardCalc.isLeftBracket("?"), false, "isLeftbracket() should return true with input ?.");
+		assertEquals(standardCalc.isLeftBracket("?"), false, "isRightbracket() should return true with input ?.");
 	}
 	
 

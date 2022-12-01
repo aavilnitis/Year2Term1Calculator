@@ -26,10 +26,10 @@ public class StandardCalc {
 	}
 
 	public boolean isLeftBracket(String string) {
-		return true;
+		return string.equals("(");
 	}
 
 	public boolean isRightBracket(String string) {
-		return true;
+		return string.equals(")");
 	}
 }
