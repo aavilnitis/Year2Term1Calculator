@@ -26,6 +26,9 @@ public class StandardCalc {
 			else if(isRightBracket(next)) {
 				postfix += "right_bracket";
 			}
+			else if (isOperator(next)) {
+				postfix += "operator";
+			}
 		}
 		return postfix;
 	}

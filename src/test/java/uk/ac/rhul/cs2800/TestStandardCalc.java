@@ -54,14 +54,14 @@ class TestStandardCalc {
 	}
 	
 	@Test
-	void testEvaluate() {
+	void testEvaluateNumbers() {
 		assertEquals(standardCalc.evaluate("1 2 3"), "1 2 3 ", "Evaluate with input '1 2 3' should "
 				+ "return a string with the same numbers in the same order.");
 	}
 	
 	@Test
 	void testEvaluateWithNotNumbers() {
-		assertEquals(standardCalc.evaluate("1 . 2 + f h k ? 3"), "1 2 3 ", "Evaluate with input "
+		assertEquals(standardCalc.evaluate("1 . 2 . f h k ? 3"), "1 2 3 ", "Evaluate with input "
 				+ "'1 . 2 + f h k ? 3' should still return the same numbers as last test case.");
 	}
 	
@@ -77,4 +77,9 @@ class TestStandardCalc {
 				+ " return a string containing 'right_bracket'");
 	}
 
+	@Test
+	void testOperator() {
+		assertEquals(standardCalc.evaluate("+"), "operator", "Evaluate with input '+' should"
+				+ " return a string containing 'operator'");
+	}
 }
