@@ -39,5 +39,13 @@ class TestStandardCalc {
 		assertEquals(standardCalc.isLeftBracket("?"), false, "isRightbracket() should return true with input ?.");
 	}
 	
+	@Test
+	void testPrecedence() {
+		assertEquals(standardCalc.precedence("+"), 0, "precedence() should return 0 with input +.");
+		assertEquals(standardCalc.precedence("-"), 0, "precedence() should return 0 with input -.");
+		assertEquals(standardCalc.precedence("*"), 1, "precedence() should return 1 with input *.");
+		assertEquals(standardCalc.precedence("/"), 1, "precedence() should return 1 with input /.");
+	}
+	
 
 }
