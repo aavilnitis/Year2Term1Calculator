@@ -3,7 +3,7 @@ package uk.ac.rhul.cs2800;
 import java.util.Scanner;
 
 public class StandardCalc {
-	protected OpStack opStack;
+	private OpStack opStack;
 	private RevPolishCalc rpCalc;
 	private Scanner scanner;
 	private String next, postfix = "";
@@ -49,7 +49,7 @@ public class StandardCalc {
 		return postfix;
 	}
 
-	public boolean isNumeric(String str) {
+	protected boolean isNumeric(String str) {
 		try {
 			Integer.parseInt(str);
 			return true;
@@ -58,22 +58,22 @@ public class StandardCalc {
 		}
 	}
 
-	public boolean isOperator(String string) {
+	protected boolean isOperator(String string) {
 		if (string.equals("+") || string.equals("-") || string.equals("*") || string.equals("/")) {
 			return true;
 		}
 		return false;
 	}
 
-	public boolean isLeftBracket(String string) {
+	protected boolean isLeftBracket(String string) {
 		return string.equals("(");
 	}
 
-	public boolean isRightBracket(String string) {
+	protected boolean isRightBracket(String string) {
 		return string.equals(")");
 	}
 
-	public int precedence(String op) {
+	protected int precedence(String op) {
 		switch (op) {
 		case "+":
 		case "-":
@@ -86,7 +86,7 @@ public class StandardCalc {
 		}
 	}
 
-	public Symbol whichSymbol(String symbol) {
+	protected Symbol whichSymbol(String symbol) {
 		Symbol s;
 		switch (symbol) {
 		case "+":
