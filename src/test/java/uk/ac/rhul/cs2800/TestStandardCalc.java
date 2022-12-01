@@ -66,20 +66,6 @@ class TestStandardCalc {
 	}
 	
 	@Test
-	void testLeftBracketcorrect() throws BadTypeException {
-		standardCalc.evaluate("(");
-		assertEquals(standardCalc.opStack.size(), 1, "After reading a left bracket, "
-				+ "evaluate should push the left bracket to the opStack increasing the size by one");
-	}
-	
-	@Test
-	void testOperatorCorrect() throws BadTypeException {
-		standardCalc.evaluate("+");
-		assertEquals(standardCalc.opStack.size(), 1, "After reading an operator, "
-				+ "evaluate should push the operator to the opStack increasing the size by one");
-	}
-	
-	@Test
 	void testRightBracketCorrect() throws BadTypeException {
 		assertEquals(standardCalc.evaluate("( + - )"), "+ - ", "After reading left bracket, "
 				+ "then two operators and then right bracket, evaluate should push the left bracket"
