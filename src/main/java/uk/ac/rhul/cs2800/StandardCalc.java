@@ -9,7 +9,12 @@ public class StandardCalc {
 		this.rpCalc = new RevPolishCalc();
 	}
 
-	public boolean isNumeric(String string) {
-		return true;
+	public boolean isNumeric(String str) {
+		try {
+			Integer.parseInt(str);
+			return true;
+		} catch (NumberFormatException e) {
+			return false;
+		}
 	}
 }

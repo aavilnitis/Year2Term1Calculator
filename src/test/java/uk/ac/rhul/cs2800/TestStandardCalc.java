@@ -17,5 +17,10 @@ class TestStandardCalc {
 	void testIsNumeric() {
 		assertEquals(standardCalc.isNumeric("5"), true, "isNumeric() should return true with input 5.");
 	}
+	
+	@Test
+	void isNotNumeric() {
+		assertEquals(standardCalc.isNumeric("?"), false, "isNumeric() should return false with input ?.");
+	}
 
 }
