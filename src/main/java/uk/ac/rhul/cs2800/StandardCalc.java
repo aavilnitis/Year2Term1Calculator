@@ -6,7 +6,7 @@ public class StandardCalc {
 	private OpStack opStack;
 	private RevPolishCalc rpCalc;
 	private Scanner scanner;
-	private String next;
+	private String next, postfix = "";
 	
 	public StandardCalc() {
 		this.opStack = new OpStack();
@@ -15,8 +15,14 @@ public class StandardCalc {
 	
 	public String evaluate(String what) {
 		scanner = new Scanner(what);
-		next = scanner.next();
-		return next;
+		while(scanner.hasNext()) {
+			next = scanner.next();
+			if (isNumeric(next)) {
+				System.out.println(next);
+				postfix += next + " ";
+			}
+		}
+		return postfix;
 	}
 
 	public boolean isNumeric(String str) {

@@ -54,10 +54,9 @@ class TestStandardCalc {
 	}
 	
 	@Test
-	void testEvaluateScanner() {
-		assertEquals(standardCalc.evaluate("test"), "test", "As I am currently testing if the scanner works, "
-				+ "evaluate should return a String with the same input as given.");
-		
+	void testEvaluate() {
+		assertEquals(standardCalc.evaluate("1 2 3"), "1 2 3 ", "Evaluate with input 1 2 3 should "
+				+ "return a string with the same numbers in the same order.");
 	}
 
 }
