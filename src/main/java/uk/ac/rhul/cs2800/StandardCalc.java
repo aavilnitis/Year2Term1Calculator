@@ -42,7 +42,7 @@ public class StandardCalc {
 		case "/":
 			return 1;
 		default:
-			return -1;
+			throw new IllegalArgumentException("Operator unknown: " + op);
 		}
 	}
 }
