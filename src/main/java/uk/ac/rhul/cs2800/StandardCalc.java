@@ -38,6 +38,14 @@ public class StandardCalc {
 				opStack.push(whichSymbol(next));
 			}
 		}
+		while (!opStack.isEmpty()) {
+			if (opStack.top() != Symbol.LEFT_BRACKET) {
+				postfix += opStack.pop().toString() + " ";
+			} else {
+				opStack.pop();
+			}
+		}
+		
 		return postfix;
 	}
 

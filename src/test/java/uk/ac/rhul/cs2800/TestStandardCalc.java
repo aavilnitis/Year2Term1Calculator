@@ -87,5 +87,12 @@ class TestStandardCalc {
 				+ "everything off until it reaches a left bracket and add it to postfix string.");
 	}
 	
+	@Test
+	void testEverythingIsCovered() throws BadTypeException {
+		assertEquals(standardCalc.evaluate("( 5 + 4 ) * 5"), "5 4 + 5 * ", "Edge case: if there is a closing, "
+				+ "closing bracket before the equation actually ends, nothing after the right bracket"
+				+ "is read as it stops reading it when a right bracket is met.");
+	}
+	
 	
 }
