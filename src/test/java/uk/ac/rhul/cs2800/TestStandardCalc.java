@@ -9,7 +9,7 @@ class TestStandardCalc {
 	StandardCalc standardCalc;
 
 	@BeforeEach
-	void testStandardCalc() {
+	void setup() {
 		standardCalc = new StandardCalc();
 	}
 	
@@ -25,7 +25,13 @@ class TestStandardCalc {
 	
 	@Test
 	void testIsOperator() {
-		assertEquals(standardCalc.isOperator("*"), true, "isoperator() should return true with input *.");
+		assertEquals(standardCalc.isOperator("*"), true, "isOperator() should return true with input *.");
 	}
+	
+	@Test
+	void testIsNotOperator() {
+		assertEquals(standardCalc.isOperator("?"), false, "isOperator() should return false with input ?.");
+	}
+	
 
 }
