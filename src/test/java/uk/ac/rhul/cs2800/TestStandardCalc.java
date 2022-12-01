@@ -48,14 +48,9 @@ class TestStandardCalc {
 		assertEquals(standardCalc.precedence("-"), 0, "precedence() should return 0 with input -.");
 		assertEquals(standardCalc.precedence("*"), 1, "precedence() should return 1 with input *.");
 		assertEquals(standardCalc.precedence("/"), 1, "precedence() should return 1 with input /.");
-	}
-	
-	@Test
-	void testInvalidPrecedence() {
 		assertThrows(IllegalArgumentException.class, () -> standardCalc.precedence("?"), 
 				"precedence() method of StandardCalc should throw an IllegalArgumentException "
 				+ "if the input is not an operator.");
 	}
-	
 
 }
