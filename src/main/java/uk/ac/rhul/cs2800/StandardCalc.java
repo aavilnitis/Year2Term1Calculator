@@ -17,4 +17,8 @@ public class StandardCalc {
 			return false;
 		}
 	}
+
+	public boolean isOperator(String string) {
+		return true;
+	}
 }

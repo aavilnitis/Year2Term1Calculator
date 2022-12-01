@@ -19,8 +19,13 @@ class TestStandardCalc {
 	}
 	
 	@Test
-	void isNotNumeric() {
+	void testIsNotNumeric() {
 		assertEquals(standardCalc.isNumeric("?"), false, "isNumeric() should return false with input ?.");
+	}
+	
+	@Test
+	void testIsOperator() {
+		assertEquals(standardCalc.isOperator("*"), true, "isoperator() should return true with input *.");
 	}
 
 }
