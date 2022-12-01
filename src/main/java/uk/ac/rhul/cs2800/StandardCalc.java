@@ -18,16 +18,17 @@ public class StandardCalc {
 		while(scanner.hasNext()) {
 			next = scanner.next();
 			if (isNumeric(next)) {
-				postfix += next + " ";
+				System.out.println(next);
+				postfix += "operand ";
 			}
 			else if(isLeftBracket(next)) {
-				postfix += "left_bracket";
+				postfix += "left_bracket ";
 			}
 			else if(isRightBracket(next)) {
-				postfix += "right_bracket";
+				postfix += "right_bracket ";
 			}
 			else if (isOperator(next)) {
-				postfix += "operator";
+				postfix += "operator ";
 			}
 		}
 		return postfix;
