@@ -70,5 +70,11 @@ class TestStandardCalc {
 		assertEquals(standardCalc.evaluate("("), "left_bracket", "Evaluate with input '(' should"
 				+ " return a string containing 'left_bracket'");
 	}
+	
+	@Test
+	void testRightBracket() {
+		assertEquals(standardCalc.evaluate(")"), "right_bracket", "Evaluate with input ')' should"
+				+ " return a string containing 'right_bracket'");
+	}
 
 }
