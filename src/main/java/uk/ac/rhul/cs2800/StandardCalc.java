@@ -8,4 +8,8 @@ public class StandardCalc {
 		this.opStack = new OpStack();
 		this.rpCalc = new RevPolishCalc();
 	}
+
+	public boolean isNumeric(String string) {
+		return true;
+	}
 }
