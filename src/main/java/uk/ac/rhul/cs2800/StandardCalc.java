@@ -13,7 +13,7 @@ public class StandardCalc {
 		this.rpCalc = new RevPolishCalc();
 	}
 	
-	public String evaluate(String what) {
+	public String evaluate(String what) throws BadTypeException {
 		scanner = new Scanner(what);
 		while(scanner.hasNext()) {
 			next = scanner.next();
@@ -25,7 +25,10 @@ public class StandardCalc {
 				opStack.push(whichSymbol(next));
 			}
 			else if(isRightBracket(next)) {
-				postfix += "right_bracket ";
+				while (opStack.top() != Symbol.LEFT_BRACKET) {
+					postfix += opStack.pop().toString() + " ";
+				}
+				opStack.pop();
 			}
 			else if (isOperator(next)) {
 				opStack.push(whichSymbol(next));
