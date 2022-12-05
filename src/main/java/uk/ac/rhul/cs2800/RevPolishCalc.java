@@ -1,70 +1,95 @@
 package uk.ac.rhul.cs2800;
 
+import java.util.EmptyStackException;
 import java.util.Scanner;
 
+/**
+ * RevPolishCalc class with functionality to evaluate postfix equations.
+ * 
+ * @author aleksisvilnitis
+ */
 public class RevPolishCalc {
-	private NumStack numStack;
-	private String c;
-	private float result, x, y;
+  private NumStack numStack;
+  private String next;
+  private float operand1;
+  private float operand2;
 
-	public RevPolishCalc() {
-		this.numStack = new NumStack();
-	}
+  /**
+   * Public constructor for RevPolishCalc class.
+   */
+  public RevPolishCalc() {
+    this.numStack = new NumStack();
+  }
+  
+  /**
+   * Public method to evaluate postfix equations from a string.
+   * 
+   * @param what postfix equation that's going to be calculated
+   * @return float value of postfix equation result
+   * @throws Exception when equation has illegal operator
+   * @throws EmptyStackException when pop() is called, but size of stack is zero
+   */
+  public float evaluate(String what) throws Exception {
+    Scanner scanner = new Scanner(what);
 
-	public boolean isOperator(String string) {
-		if (string.equals("+") || string.equals("-") || string.equals("*") || string.equals("/")) {
-			return true;
-		}
-		return false;
-	}
+    while (scanner.hasNext()) {
+      next = scanner.next();
+      if (isOperator(next)) {
+        operand2 = numStack.pop();
+        operand1 = numStack.pop();
+        switch (next) {
+          case "+":
+            numStack.push(operand1 + operand2);
+            break;
+          case "-":
+            numStack.push(operand1 - operand2);
+            break;
+          case "*":
+            numStack.push(operand1 * operand2);
+            break;
+          case "/":
+            numStack.push(operand1 / operand2);
+            break;
+          default:
+            break;
+        }
+      } else if (isNumeric(next)) {
+        numStack.push(Float.parseFloat(next));
+      } else {
+        throw new Exception("Illegal Operator!");
+      }
+    }
+    return numStack.pop();
+  }
 
-	public boolean isNumeric(String str) {
-		try {
-			Float.parseFloat(str);
-			return true;
-		} catch (NumberFormatException e) {
-			return false;
-		}
-	}
+  /**
+   * Protected method that checks if a string is equal to one of the allowed operators.
+   * 
+   * @param str the String value that is checked
+   * @return true if string contains only an operator
+   */
+  protected boolean isOperator(String str) {
+    if (str.equals("+") || str.equals("-") || str.equals("*") || str.equals("/")) {
+      return true;
+    }
+    return false;
+  }
 
-	public float evaluate(String string) throws Exception {
-		Scanner scanner = new Scanner(string);
+  /**
+   * Protected method that checks if a string contains a numeric value and only a numeric value.
+   * 
+   * @param str the String value that is checked
+   * @return true if string contains only a numeric value
+   */
+  protected boolean isNumeric(String str) {
+    try {
+      Integer.parseInt(str);
+      return true;
+    } catch (NumberFormatException e) {
+      return false;
+    }
+  }
 
-		while (scanner.hasNext()) {
-			c = scanner.next();
-			if (isOperator(c)) {
-				switch(c) {
-				case "+":
-					x = numStack.pop();
-					y = numStack.pop();
-					numStack.push(x + y);
-					break;
-				case "-":
-					x = numStack.pop();
-					y = numStack.pop();
-					numStack.push(y - x);
-					break;
-				case "*":
-					x = numStack.pop();
-					y = numStack.pop();
-					numStack.push(x * y);
-					break;
-				case "/":
-					x = numStack.pop();
-					y = numStack.pop();
-					numStack.push(y / x);
-					break;
-				default:
-					break;
-				}
-			} else if(isNumeric(c)) {
-				numStack.push(Float.parseFloat(c));
-			}
-			else {
-				throw new Exception("Illegal Operator!");
-			}
-		}
-		return numStack.pop();
-	}
+  
 
 }
