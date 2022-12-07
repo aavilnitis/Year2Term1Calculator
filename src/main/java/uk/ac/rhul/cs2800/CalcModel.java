@@ -17,8 +17,11 @@ public class CalcModel {
     this.stCalc = new StandardCalc();
   }
 
-  public float evaluate(String string) throws Exception {
-    return rpCalc.evaluate(string);
+  public float evaluate(String expression, boolean infix) throws Exception {
+    if(infix) {
+      return stCalc.evaluate(expression);
+    }
+    return rpCalc.evaluate(expression);
   }
 
 }

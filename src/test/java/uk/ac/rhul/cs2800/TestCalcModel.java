@@ -21,6 +21,11 @@ class TestCalcModel {
 
   @Test
   void testPostfix() throws Exception {
-    assertEquals(calcModel.evaluate("1 2 +"), 3f, "Postfix result of 1 2 + should be 3f");
+    assertEquals(calcModel.evaluate("1 2 +", false), 3f, "Postfix result of 1 2 + should be 3f");
+  }
+  
+  @Test
+  void testInfix() throws Exception {
+    assertEquals(calcModel.evaluate("1 + 2", true), 3f, "Infix result of 1 2 + should be 3f");
   }
 }
