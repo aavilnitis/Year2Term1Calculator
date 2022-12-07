@@ -17,4 +17,8 @@ public class CalcModel {
     this.stCalc = new StandardCalc();
   }
 
+  public float evaluate(String string) throws Exception {
+    return rpCalc.evaluate(string);
+  }
+
 }
