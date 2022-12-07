@@ -8,7 +8,7 @@ package uk.ac.rhul.cs2800;
 public class CalcModel {
   protected RevPolishCalc rpCalc;
   protected StandardCalc stCalc;
-  
+
   /**
    * Public constructor for CalcModel.
    */
@@ -17,8 +17,16 @@ public class CalcModel {
     this.stCalc = new StandardCalc();
   }
 
+  /**
+   * Evaluate method that calls either RevPolishCalc or StandardCalc depending on param infix value.
+   * 
+   * @param expression the expression to be calculated
+   * @param infix boolean value that tells if the expression is in postfix or not
+   * @return float value of the result
+   * @throws Exception when expression is invalid
+   */
   public float evaluate(String expression, boolean infix) throws Exception {
-    if(infix) {
+    if (infix) {
       return stCalc.evaluate(expression);
     }
     return rpCalc.evaluate(expression);
