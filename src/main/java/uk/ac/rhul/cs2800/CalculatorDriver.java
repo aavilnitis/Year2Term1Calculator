@@ -11,7 +11,7 @@ import javafx.stage.Stage;
  * 
  * @author aleksisvilnitis
  */
-public class Driver extends Application {
+public class CalculatorDriver extends Application {
 
   /**
    * Main method of Driver class.
@@ -24,9 +24,10 @@ public class Driver extends Application {
 
   @Override
   public void start(Stage primaryStage) throws Exception {
-    Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("myView.fxml"));
-    Scene scene = new Scene(root, 800, 500);
+    Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("calcView.fxml"));
+    Scene scene = new Scene(root, 500, 300);
     primaryStage.setScene(scene);
-    primaryStage.show();    
+    primaryStage.setResizable(false);
+    primaryStage.show();   
   }
 }
