@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 class TestEntry {
   Entry number;
   Entry symbol;
-  Entry string;
 
   /**
    * Test1 - Tests if all three Entry types can be initialised. At first the test only included one
@@ -23,7 +22,6 @@ class TestEntry {
   void testEntry() {
     number = new Entry((float) 10.0f);
     symbol = new Entry(Symbol.MINUS);
-    string = new Entry("String entry");
   }
 
   /**
@@ -43,15 +41,6 @@ class TestEntry {
   @Test
   void testGetTypeSymbol() {
     assertEquals(symbol.getType(), Type.SYMBOL, "The Type returned should be equal Type.SYMBOL");
-  }
-
-  /**
-   * Test5 - Tests if getType() returns the correct Type for a String Entry. The test passed as I
-   * had fixed the getType method in the previous test.
-   */
-  @Test
-  void testGetTypeString() {
-    assertEquals(string.getType(), Type.STRING, "The Type returned should be equal Type.STRING");
   }
 
   /**
@@ -85,27 +74,13 @@ class TestEntry {
   }
 
   /**
-   * Test7 - Tests if getString() returns the Symbol stored in Entry of type Symbol. To get this
-   * test to pass i had to create a getString() method in the Entry class and return "String entry"
-   * but later on to refactor and make the test work without cheating them by first checking if the
-   * Type of entry is String and then returning the stored String. This resulted in adding a throws
-   * IllegalArgumentException decleration, that changed to a BadTypeException before Test8 where I
-   * had to create it.
-   */
-  @Test
-  void testGetString() throws BadTypeException {
-    assertEquals(string.getString(), "String entry",
-        "The String returned should match the one used in the constructor.");
-  }
-
-  /**
    * Test8 - Tests if getValue() throws a BadTypeException if I try calling getValue() from a non
    * Number Entry. To get this test to pass I first had to create a BadTypeException and throw it 
    * in the getValue() method if Entry.type is not Number.
    */
   @Test
   void testGetNumberException() throws BadTypeException {
-    BadTypeException e = assertThrows(BadTypeException.class, () -> string.getValue());
+    BadTypeException e = assertThrows(BadTypeException.class, () -> symbol.getValue());
     assertEquals(e.getMessage(),
         "To use the function getValue(), The Entry has to be of type NUMBER.");
   }
@@ -121,18 +96,6 @@ class TestEntry {
     BadTypeException e = assertThrows(BadTypeException.class, () -> number.getSymbol());
     assertEquals(e.getMessage(),
         "To use the function getSymbol(), The Entry has to be of type SYMBOL.");
-  }
-
-  /**
-   * Test10 - Tests if getString() throws a BadTypeException if I try calling getString() from a 
-   * non String Entry. To get this test to pass I had to throw a BadTypeException in the 
-   * getString() method if the Entry.type is not String.
-   */
-  @Test
-  void testGetStringException() {
-    BadTypeException e = assertThrows(BadTypeException.class, () -> symbol.getString());
-    assertEquals(e.getMessage(),
-        "To use the function getString(), The Entry has to be of type STRING.");
   }
 
 

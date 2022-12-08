@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 class TestSymbol {
-  static Symbol plus, minus, divide, times, left, right, invalid;
+  static Symbol plus, minus, divide, times, left, right;
 
   /**
    * Test1 - tests all the different symbols. To get this test to pass I had to create a new Enum
@@ -19,7 +19,6 @@ class TestSymbol {
     times = Symbol.TIMES;
     left = Symbol.LEFT_BRACKET;
     right = Symbol.RIGHT_BRACKET;
-    invalid = Symbol.LEFT_BRACKET;
   }
 
   /**

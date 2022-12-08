@@ -11,7 +11,6 @@ public class Entry {
   private float value;
   private Symbol symbol;
   private Type type;
-  private String string;
 
   /**
    * Public constructor for Entry class that saves the value and sets Type to NUMBER.
@@ -32,17 +31,7 @@ public class Entry {
     this.symbol = s;
     this.type = Type.SYMBOL;
   }
-
-  /**
-   * Public constructor for Entry class that saves the String and sets Type to STRING.
-   * 
-   * @param st the String that's going to be stored in Entry.
-   */
-  public Entry(String st) {
-    this.string = st;
-    this.type = Type.STRING;
-  }
-
+  
   /**
    * Returns the float value stored if the type of Entry is NUMBER.
    * 
@@ -55,21 +44,6 @@ public class Entry {
     } else {
       throw new BadTypeException(
           "To use the function getValue(), The Entry has to be of type NUMBER.");
-    }
-  }
-
-  /**
-   * Returns the String value stored if the type of Entry is STRING.
-   * 
-   * @return the String stored in Entry.
-   * @throws BadTypeException if Type of entry is not STRING and getValue() is called
-   */
-  public String getString() throws BadTypeException {
-    if (this.type == Type.STRING) {
-      return string;
-    } else {
-      throw new BadTypeException(
-          "To use the function getString(), The Entry has to be of type STRING.");
     }
   }
 
@@ -99,7 +73,7 @@ public class Entry {
 
   @Override
   public int hashCode() {
-    return Objects.hash(string, symbol, type, value);
+    return Objects.hash(symbol, type, value);
   }
 
   /**
@@ -119,7 +93,7 @@ public class Entry {
       return false;
     }
     Entry other = (Entry) obj;
-    return Objects.equals(string, other.string) && symbol == other.symbol && type == other.type
+    return symbol == other.symbol && type == other.type
         && Float.floatToIntBits(value) == Float.floatToIntBits(other.value);
   }
 

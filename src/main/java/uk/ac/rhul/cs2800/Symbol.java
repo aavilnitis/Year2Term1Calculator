@@ -6,8 +6,7 @@ package uk.ac.rhul.cs2800;
  * @author aleksisvilnitis
  */
 public enum Symbol {
-  LEFT_BRACKET("("), RIGHT_BRACKET(")"), TIMES("*"), DIVIDE("/"), PLUS("+"), MINUS("-"), 
-  INVALID("_");
+  LEFT_BRACKET("("), RIGHT_BRACKET(")"), TIMES("*"), DIVIDE("/"), PLUS("+"), MINUS("-");
 
   private String symbol;
 

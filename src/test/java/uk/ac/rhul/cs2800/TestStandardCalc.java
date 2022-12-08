@@ -43,18 +43,18 @@ class TestStandardCalc {
 	}
 	
 	@Test
-	void testPrecedence() {
+	void testPrecedence() throws InvalidExpressionException {
 		assertEquals(standardCalc.precedence("+"), 0, "precedence() should return 0 with input +.");
 		assertEquals(standardCalc.precedence("-"), 0, "precedence() should return 0 with input -.");
 		assertEquals(standardCalc.precedence("*"), 1, "precedence() should return 1 with input *.");
 		assertEquals(standardCalc.precedence("/"), 1, "precedence() should return 1 with input /.");
-		assertThrows(IllegalArgumentException.class, () -> standardCalc.precedence("?"), 
+		assertThrows(InvalidExpressionException.class, () -> standardCalc.precedence("?"), 
 				"precedence() method of StandardCalc should throw an IllegalArgumentException "
 				+ "if the input is not an operator.");
 	}
 	
 	@Test
-	void testWhichSymbol() {
+	void testWhichSymbol() throws InvalidExpressionException {
 		assertEquals(standardCalc.whichSymbol("+"), Symbol.PLUS, "whichSymbol() should return an enum "
 				+ "Symbol.PLUS with the input '+'");
 		assertEquals(standardCalc.whichSymbol("-"), Symbol.MINUS, "whichSymbol() should return an enum "

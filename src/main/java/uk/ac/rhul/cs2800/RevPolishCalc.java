@@ -26,7 +26,7 @@ public class RevPolishCalc {
    * 
    * @param what postfix equation that's going to be calculated
    * @return float value of postfix equation result
-   * @throws Exception when equation has illegal operator
+   * @throws InvalidExpressionException when equation has illegal operator
    * @throws EmptyStackException when pop() is called, but size of stack is zero
    */
   public float evaluate(String what) throws Exception {
@@ -56,7 +56,7 @@ public class RevPolishCalc {
       } else if (isNumeric(next)) {
         numStack.push(Float.parseFloat(next));
       } else {
-        throw new Exception("Illegal Operator!");
+        throw new InvalidExpressionException("Illegal Operator!");
       }
     }
     return numStack.pop();

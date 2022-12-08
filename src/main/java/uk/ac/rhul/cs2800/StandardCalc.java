@@ -116,8 +116,9 @@ public class StandardCalc {
    * 
    * @param op the operator that is checked
    * @return level of precedence for given operator
+   * @throws InvalidExpressionException when operator doesn't match any of the allowed values
    */
-  protected int precedence(String op) {
+  protected int precedence(String op) throws InvalidExpressionException {
     switch (op) {
       case "+":
       case "-":
@@ -126,7 +127,7 @@ public class StandardCalc {
       case "/":
         return 1;
       default:
-        throw new IllegalArgumentException("Operator unknown: " + op);
+        throw new InvalidExpressionException("Operator unknown: " + op);
     }
   }
 
@@ -135,8 +136,9 @@ public class StandardCalc {
    * 
    * @param symbol the String value of the symbol checked
    * @return enum Symbol that is equal to String input
+   * @throws InvalidExpressionException when symbol doesn't match any of the allowed values
    */
-  protected Symbol whichSymbol(String symbol) {
+  protected Symbol whichSymbol(String symbol) throws InvalidExpressionException {
     Symbol s;
     switch (symbol) {
       case "+":
@@ -158,8 +160,7 @@ public class StandardCalc {
         s = Symbol.RIGHT_BRACKET;
         break;
       default:
-        s = Symbol.INVALID;
-        break;
+        throw new InvalidExpressionException("Invalid symbol");
     }
     return s;
   }

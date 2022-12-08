@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 class TestType {
-  static Type number, symbol, string, invalid;
+  static Type number, symbol, invalid;
 
   /**
    * Test1 - tests all the different Types. To get this test to pass I had to create a new Enum
@@ -15,8 +15,6 @@ class TestType {
   static void testType() {
     number = Type.NUMBER;
     symbol = Type.SYMBOL;
-    string = Type.STRING;
-    invalid = Type.INVALID;
   }
 
   /**

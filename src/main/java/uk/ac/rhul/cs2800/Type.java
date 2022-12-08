@@ -6,7 +6,7 @@ package uk.ac.rhul.cs2800;
  * @author aleksisvilnitis
  */
 public enum Type {
-  NUMBER("Number"), SYMBOL("Symbol"), STRING("String"), INVALID("Invalid");
+  NUMBER("Number"), SYMBOL("Symbol");
 
   private String type;
 
